@@ -50,12 +50,35 @@ nav a:hover {
 main {
     max-width: 900px;
     margin: 30px auto;
-    padding: 0 20px;
 }
 
 section {
     background-color: white;
     padding: 25px;
+    margin-top: 30px;
+}
+
+span[badge] {
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 15px;
+    color: white;
+}
+
+span[badge="html"] {
+    background-color: #115eee;
+}
+
+span[badge="css"] {
+    background-color: #d411ee;
+}
+
+span[badge="js"] {
+    background-color: #eec511;
+}
+
+span[badge="mysql"] {
+    background-color: #4411ee;
 }
 
 /* Gambar */
@@ -146,9 +169,12 @@ aside {
 /* Footer */
 footer {
     padding: 20px;
+    max-width: 900px;
     text-align: center;
     color: #777;
     font-size: 14px;
+    margin: auto;
+    border: 1px solid #ddd;
 }
 
 /* Garis <hr> */

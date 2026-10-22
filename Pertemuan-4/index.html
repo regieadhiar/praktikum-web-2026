@@ -40,6 +40,125 @@
         font-size: 14px;
     }
 
+    .form-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 18px;
+        margin-bottom: 25px;
+    }
+
+    .form-card h2 {
+        font-size: 16px;
+        color: #1e3a8a;
+        margin-bottom: 14px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 9px 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+        background: #ffffff;
+        color: #0f172a;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: 2px solid #1e3a8a;
+        outline-offset: 1px;
+        border-color: #1e3a8a;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .checkbox-group input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    .checkbox-group label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #334155;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background: #1e3a8a;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+        background: #1e40af;
+    }
+
+    .error-message {
+        color: #b91c1c;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 10px;
+        display: none;
+    }
+
+    .error-message.show {
+        display: block;
+    }
+
+    .search-box {
+        margin-bottom: 12px;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+        color: #0f172a;
+    }
+
+    .search-box input:focus {
+        outline: 2px solid #1e3a8a;
+        outline-offset: 1px;
+        border-color: #1e3a8a;
+    }
+
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -150,12 +269,80 @@
         background: #fef9c3;
         color: #854d0e;
     }
+
+    .project-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+    }
+
+    .btn-action {
+        padding: 6px 12px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #334155;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+        background: #1e3a8a;
+        color: #ffffff;
+        border-color: #1e3a8a;
+    }
+
+    .btn-action.btn-danger:hover {
+        background: #dc2626;
+        color: #ffffff;
+        border-color: #dc2626;
+    }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Portofolio Proyek</h1>
-        <p class="subtitle">Modul 4: Pengolahan Logika Data & Interaktivitas DOM</p>
+        <p class="subtitle">Modul 4: Pengolahan Logika Data & Interaktivitas DOM - 2406031 - Regie Adhia R</p>
+
+        <!-- Formulir Input Proyek Dinamis -->
+        <form class="form-card" id="project-form">
+            <h2>Tambah Proyek Baru</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="project-title">Judul Proyek</label>
+                    <input type="text" id="project-title" placeholder="Contoh: Aplikasi Kasir Toko" />
+                </div>
+
+                <div class="form-group">
+                    <label for="project-category">Kategori</label>
+                    <select id="project-category">
+                        <option value="Web App">Web App</option>
+                        <option value="Mobile App">Mobile App</option>
+                        <option value="Desktop App">Desktop App</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-budget">Estimasi Anggaran (Rp)</label>
+                    <input type="number" id="project-budget" placeholder="Contoh: 1500000" />
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="project-completed" />
+                <label for="project-completed">Status 'Sudah Selesai'</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Simpan Proyek</button>
+
+            <!-- Pesan error validasi -->
+            <p class="error-message" id="form-error"></p>
+        </form>
 
         <!-- Kartu Ringkasan Statistik -->
          <div class="stats-grid">
@@ -171,14 +358,18 @@
                 <h3>Selesai Dikerjakan</h3>
                 <p id="stat-completed-projects">0</p>
             </div>
-         </div>
+         </div>          <!-- Pencarian Real-Time -->
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Cari proyek berdasarkan nama..." />
+          </div>
 
-         <!-- Tombol Filter Kategori -->
+          <!-- Tombol Filter Kategori -->
           <div class="filter-group">
             <button class="btn-filter active" data-category="Semua">Semua Proyek</button>
             <button class="btn-filter" data-category="Web App">Web App</button>
             <button class="btn-filter" data-category="Desktop App">Desktop App</button>
             <button class="btn-filter" data-category="Mobile App">Mobile App</button>
+            <button class="btn-filter" data-category="UI/UX Design">UI/UX Design</button>
           </div>
 
           <!-- Kontainer Daftar Proyek -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6 - API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Daftar Pengguna</h2>
+        <p class="subtitle">Praktikum Asynchronous JavaScript & Fetching API</p>
+
+        <!-- Tombol Aksi -->
+        <div class="action-bar">
+            <button class="btn-primary" id="btnFetch">Muat data pengguna</button>
+        </div>
+
+        <!-- Indikator Status loading dan pesan error -->
+        <div class="status-msg" id="statusMessage">
+            Klik tombol di atas untuk memuat data pengguna.
+        </div>
+
+        <!-- Container Card pengguna -->
+        <div class="user-grid" id="userList"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

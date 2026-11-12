@@ -1,0 +1,209 @@
+/* File: public/style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial,
+        sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #1e3a8a;
+    margin-bottom: 4px;
+    font-size: 22px;
+}
+
+/* Fitur 1: Kolom Pencarian Real-Time */
+#searchInput {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13.5px;
+    outline: none;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+#searchInput:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+}
+
+/* Fitur 3: Indikator Counter Total Mahasiswa */
+.counter-text {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-top: -6px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 13.5px;
+    margin-bottom: 20px;
+}
+
+.form-card,
+.table-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-card h3 {
+    color: #1e3a8a;
+    font-size: 16px;
+    margin-bottom: 14px;
+    border-bottom:
+        2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom:
+        4px;
+    color: #334155;
+}
+
+.req {
+    color: #dc2626;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13.5px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #1e3a8a;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+}
+
+.btn-secondary {
+    background-color: #64748b;
+    color: white;
+}
+
+.btn-action {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight:
+        bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-edit {
+    background-color: #0284c7;
+    color: white;
+    margin-right: 4px;
+}
+
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 11px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13.5px;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
